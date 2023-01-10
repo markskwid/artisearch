@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/** typography **/
+
+body {
+  font-size: 15px;
+  font-family: "Outfit", sans-serif;
+  color: white;
 }
 
-.App-header {
-  background-color: #282c34;
+h1 {
+  color: white;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/** layout **/
+
+main .main-wrapper {
   min-height: 100vh;
+  background-color: rgba(1, 1, 1, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main .main-wrapper .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  background-color: rgba(1, 1, 1, 0.3);
+  margin: 1em 0;
+}
+
+form {
+  padding: 0;
+  margin: 0;
+}
+
+main .main-wrapper .form-container input {
+  width: 90%;
+  font-family: "Outfit", sans-serif;
+  padding: 0.5em;
+}
+
+button {
+  font-family: "Outfit", sans-serif;
+  border: 0;
+  padding: 0.6em 1.5em;
+  border-radius: 999px;
+  margin: 1em 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

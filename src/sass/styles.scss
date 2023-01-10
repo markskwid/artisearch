@@ -1,0 +1,1150 @@
+@import url("https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+// variable
+$mainFont: "Poppins", sans-serif;
+$secondaryFont: "Poppins", sans-serif;
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+// desktop
+@media screen and (min-width: 1024px) {
+  header {
+    .header-wrapper {
+      background-color: transparent;
+      padding: 0.2em 1em;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .web-title {
+        font-family: $secondaryFont;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-size: 1.4rem;
+
+        span {
+          color: green;
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+
+        li {
+          margin: 0 1em;
+          display: flex;
+          align-items: center;
+
+          .icons {
+            align-self: center;
+            font-size: 1.1rem;
+            margin-right: 0.2em;
+          }
+
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            font-family: $secondaryFont;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+    }
+  }
+
+  body {
+    background-color: rgba(1, 1, 1, 0.8);
+  }
+
+  main {
+    .main-wrapper {
+      min-height: 95vh;
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+
+      h1 {
+        font-size: 2.5rem;
+        color: white;
+        font-family: $secondaryFont;
+        letter-spacing: 0.03em;
+        margin-bottom: 0;
+      }
+
+      .page-description {
+        font-size: 1rem;
+        font-family: $secondaryFont;
+        color: transparentize(white, 0.5);
+        text-align: center;
+        max-width: 70%;
+        margin: 0.5em auto;
+        margin-bottom: 1em;
+      }
+
+      .auth-btn {
+        border: 0;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 999px;
+        width: 15em;
+        padding: 1em;
+        font-family: $secondaryFont;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        column-gap: 0.2em;
+        box-shadow: 0 10px 5px 1px rgba(1, 1, 1, 0.3);
+        margin-bottom: 1em;
+        text-decoration: none;
+        color: black;
+
+        .auth-icon-spotify {
+          font-size: 1.3rem;
+          color: green;
+        }
+      }
+
+      .input-container {
+        width: 50em;
+        padding: 0.8em 0;
+        position: relative;
+
+        input {
+          width: 100%;
+          padding: 0.8em 1.2em;
+          font-family: $secondaryFont;
+          border-radius: 999px;
+          font-weight: 700;
+          color: transparentize(black, 0.3);
+          border: 0;
+        }
+
+        .btn-search {
+          background-color: transparentize(black, 0.5);
+          border: 0;
+          position: absolute;
+          right: -0.056em;
+          bottom: 0.8em;
+          width: 5em;
+          padding: 1.05em 0;
+          border-radius: 0 999px 999px 0;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          transition: 0.3s all;
+          justify-content: center;
+          color: white;
+
+          &:hover {
+            background-color: transparentize(black, 0.4);
+          }
+        }
+      }
+
+      .search-wrapper {
+        width: 90%;
+        height: auto;
+        display: flex;
+        padding: 1em 0;
+        column-gap: 0.5em;
+        row-gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .artist-container {
+          width: 18%;
+          display: flex;
+          flex-direction: column;
+          border-radius: 10px;
+          background-color: transparentize(gray, 1);
+          box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+          padding: 0.5em;
+          cursor: pointer;
+          overflow: hidden;
+          transition: 0.3s all;
+          align-items: center;
+
+          .no-image {
+            width: 90%;
+            max-width: 90%;
+            margin: auto;
+            font-size: 10rem;
+            max-height: 10em;
+            color: transparentize(white, 0.2);
+          }
+
+          .artist-profile {
+            width: 90%;
+            max-width: 90%;
+            margin: auto;
+            max-height: 12em;
+            border-radius: 999px;
+            display: block;
+            object-fit: cover;
+            margin-bottom: 1em;
+          }
+
+          .artist-name {
+            font-weight: bold;
+            color: white;
+            font-family: $secondaryFont;
+            margin: 0.2em 0;
+          }
+
+          .artist-followers {
+            font-weight: normal;
+            color: transparentize(white, 0.5);
+            font-size: 0.8rem;
+            font-family: $secondaryFont;
+            margin: 0.2em 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 0.25em;
+
+            .heart-icon {
+              font-size: 0.7rem;
+              vertical-align: middle;
+              align-self: center;
+              margin-top: -0.15em;
+            }
+          }
+
+          &:hover {
+            box-shadow: 0 5px 20px 1px rgba(1, 1, 1, 0.3);
+          }
+        }
+      }
+
+      .artist-wrapper {
+        width: 85%;
+        margin-bottom: 1em;
+        border-radius: 10px;
+        padding: 0;
+        transition: all 0.3s;
+        display: grid;
+        box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+
+        .artist-cover {
+          width: 100%;
+          height: 20em;
+          background-color: bisque;
+          display: flex;
+          padding: 1em;
+          font-family: $secondaryFont;
+          justify-content: flex-start;
+          background-size: cover;
+          align-items: flex-end;
+          background-repeat: no-repeat;
+          background-position: center 30%;
+          border-radius: 10px 10px 0 0;
+
+          .btn-back {
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            color: white;
+            margin-bottom: auto;
+            cursor: pointer;
+
+            .icon {
+              font-size: 1.5rem;
+            }
+          }
+
+          .info-container {
+            padding: 0;
+            text-align: start;
+            color: white;
+            margin-left: -1.5em;
+
+            .artist-name {
+              font-weight: bold;
+              font-size: 3rem;
+              letter-spacing: 0.02em;
+              margin: 0;
+            }
+
+            .artist-info {
+              margin: 0;
+              font-size: 1.2rem;
+              font-family: $secondaryFont;
+              display: flex;
+              align-items: center;
+              color: transparentize(white, 0.2);
+              gap: 0.4em;
+
+              .icon {
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+
+        .artist-body {
+          display: flex;
+          font-family: $secondaryFont;
+          background-color: transparentize(gray, 0.8);
+          width: 100%;
+          align-items: flex-start;
+          border-radius: 0 0 10px 10px;
+
+          .album-view,
+          .gallery {
+            width: 50%;
+            border-right: 1px solid transparentize(gray, 0.8);
+            text-align: start;
+            padding: 0 1.3em;
+            display: flex;
+            flex-wrap: wrap;
+            border-image: linear-gradient(
+                transparent 10%,
+                transparentize(white, 0.8) 10% 50%,
+                transparent 90%
+              )
+              0 0 0 1 / 3px;
+            position: relative;
+
+            h2 {
+              width: 100%;
+              color: white;
+              font-size: 1.2rem;
+            }
+
+            h3 {
+              width: 100%;
+              margin: 0.5em 0;
+              color: white;
+            }
+
+            .close-album {
+              position: absolute;
+              border: 0;
+              outline: 0;
+              background: transparent;
+              top: 1em;
+              left: 0.5em;
+              cursor: pointer;
+
+              .icon {
+                font-size: 2rem;
+                color: rgba(255, 255, 255, 0.5);
+                transition: all 0.3s;
+              }
+
+              &:hover > .icon {
+                color: white;
+              }
+            }
+
+            .album-cover-display {
+              width: 35%;
+              margin: 1.3em 0;
+              box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+            }
+
+            .album-info {
+              padding: 1em;
+              color: transparentize(white, 0.3);
+
+              .album-title {
+                font-size: 1rem;
+                letter-spacing: 0.05em;
+                margin: 0;
+                color: white;
+              }
+
+              .album-release-date {
+                display: flex;
+                align-items: center;
+                font-size: 0.8rem;
+                gap: 0.5em;
+              }
+            }
+
+            .album-tracks,
+            ul {
+              list-style: none;
+              padding: 0;
+              display: flex;
+              margin: 0;
+              width: 100%;
+              flex-wrap: wrap;
+
+              .tracks {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin: 0;
+
+                color: white;
+              }
+
+              .top-tracks {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                gap: 0.7em;
+                width: 50%;
+                color: white;
+
+                .album-cover {
+                  width: 2.8em;
+                }
+
+                p {
+                  font-size: 0.9rem;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+
+          .album-tracks {
+            list-style-type: none;
+            display: block;
+            overflow-x: auto;
+            height: auto;
+            max-height: 22em;
+          }
+
+          .artist-album-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+              width: 100%;
+            }
+
+            .album-wrapper {
+              list-style-type: none;
+              display: inline-block;
+              height: auto;
+              padding-bottom: 0.8em;
+              width: 100%;
+              overflow-x: auto;
+              padding: 0;
+              white-space: nowrap;
+
+              li {
+                display: inline-block;
+                margin: 0;
+                margin-right: 0.4em;
+
+                &:last-child {
+                  margin-right: 0;
+                }
+
+                .album-container {
+                  color: white;
+                  display: flex;
+
+                  white-space: normal;
+                  word-break: break-all;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0;
+                  cursor: pointer;
+                  width: 9em;
+                  background-color: transparentize(gray, 1);
+
+                  img {
+                    width: 100%;
+                    transition: all 0.3s;
+                  }
+
+                  p {
+                    font-size: 0.7rem;
+                    text-align: center;
+                  }
+
+                  &:hover > img {
+                    box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+                  }
+                }
+              }
+            }
+          }
+
+          .related-artist {
+            width: 50%;
+            text-align: start;
+
+            h2 {
+              width: 100%;
+              color: white;
+              font-size: 1.2rem;
+              padding-left: 1.2em;
+            }
+
+            .related-artist-container {
+              padding: 1em;
+              width: 100%;
+              height: 36em;
+              text-align: start;
+              cursor: pointer;
+              display: flex;
+              overflow-y: auto;
+              flex-wrap: wrap;
+              gap: 0.8em;
+              border-left: 1px solid transparentize(gray, 0.2);
+              border-image: linear-gradient(
+                  transparentize(white, 0.8) 5% 10%,
+                  transparent 70%
+                )
+                0 0 0 1 / 3px;
+              border-bottom: 20px solid;
+            }
+
+            .related-wrapper {
+              width: 31.5%;
+              padding: auto;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              color: white;
+              padding: 0em 1.5em;
+
+              .no-image,
+              img {
+                width: 8em;
+                height: 8em;
+                border-radius: 999px;
+                transition: 0.3s all;
+              }
+
+              p {
+                font-size: 0.8rem;
+                text-align: center;
+              }
+
+              &:hover > img {
+                box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.headline {
+  animation: fade 2s linear;
+}
+
+@mixin animation-mixin($name, $color1, $color2) {
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@include animation-mixin(fade, skyblue, pink);
+
+// media query for phone
+@media screen and (max-width: 767px) {
+  header {
+    .header-wrapper {
+      padding: 0.8em 0;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .web-title {
+        font-family: $secondaryFont;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-size: 1.4rem;
+        text-align: center;
+
+        span {
+          color: green;
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: none;
+
+        li {
+          margin: 0 1em;
+          display: flex;
+          align-items: center;
+
+          .icons {
+            align-self: center;
+            font-size: 1.1rem;
+            margin-right: 0.2em;
+          }
+
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            font-family: $secondaryFont;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+    }
+  } // header
+
+  body {
+    background-color: rgba(1, 1, 1, 0.8);
+  }
+
+  main {
+    .main-wrapper {
+      min-height: 80vh;
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1em;
+
+      h1 {
+        font-size: 1.9rem;
+        color: white;
+        font-family: $secondaryFont;
+        letter-spacing: 0.03em;
+        margin-bottom: 0;
+      }
+
+      .page-description {
+        font-size: 0.9rem;
+        font-family: $secondaryFont;
+        color: transparentize(white, 0.5);
+        text-align: center;
+        max-width: 100%;
+        margin: 0.5em auto;
+        margin-bottom: 1em;
+      }
+
+      .auth-btn {
+        border: 0;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 999px;
+        width: 15em;
+        padding: 1em;
+        font-family: $secondaryFont;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        column-gap: 0.2em;
+        box-shadow: 0 10px 5px 1px rgba(1, 1, 1, 0.3);
+        margin-bottom: 1em;
+        text-decoration: none;
+        color: black;
+
+        .auth-icon-spotify {
+          font-size: 1.3rem;
+          color: green;
+        }
+      }
+
+      form {
+        width: 100%;
+      }
+
+      .input-container {
+        width: 100%;
+        padding: 0.8em 0;
+        position: relative;
+
+        input {
+          width: 100%;
+          padding: 0.8em 1.2em;
+          font-family: $secondaryFont;
+          border-radius: 999px;
+          font-weight: 700;
+          color: transparentize(black, 0.3);
+          border: 0;
+        }
+
+        .btn-search {
+          background-color: transparentize(black, 0.5);
+          border: 0;
+          position: absolute;
+          right: -0.056em;
+          bottom: 0.8em;
+          width: 5em;
+          padding: 1.05em 0;
+          border-radius: 0 999px 999px 0;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          transition: 0.3s all;
+          justify-content: center;
+          color: white;
+
+          &:hover {
+            background-color: transparentize(black, 0.4);
+          }
+        }
+      }
+
+      .search-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 1em 0;
+        column-gap: 0.5em;
+        row-gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .artist-container {
+          width: 48%;
+          display: flex;
+          flex-direction: column;
+          border-radius: 10px;
+          background-color: transparentize(gray, 1);
+          box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+          padding: 0.5em;
+          cursor: pointer;
+          overflow: hidden;
+          transition: 0.3s all;
+          align-items: center;
+
+          .no-image {
+            width: 90%;
+            max-width: 90%;
+            margin: auto;
+            font-size: 10rem;
+            max-height: 10em;
+            color: transparentize(white, 0.2);
+          }
+
+          .artist-profile {
+            width: 90%;
+            max-width: 90%;
+            margin: auto;
+            max-height: 10em;
+            border-radius: 999px;
+            display: block;
+            object-fit: cover;
+            margin-bottom: 1em;
+          }
+
+          .artist-name {
+            font-weight: bold;
+            color: white;
+            font-family: $secondaryFont;
+            margin: 0.2em 0;
+          }
+
+          .artist-followers {
+            font-weight: normal;
+            color: transparentize(white, 0.5);
+            font-size: 0.8rem;
+            font-family: $secondaryFont;
+            margin: 0.2em 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 0.25em;
+
+            .heart-icon {
+              font-size: 0.7rem;
+              vertical-align: middle;
+              align-self: center;
+              margin-top: -0.15em;
+            }
+          }
+
+          &:hover {
+            box-shadow: 0 5px 20px 1px rgba(1, 1, 1, 0.3);
+          }
+        }
+      }
+
+      .artist-wrapper {
+        width: 100%;
+        margin-bottom: 1em;
+        border-radius: 10px;
+        padding: 0;
+        transition: all 0.3s;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+
+        .artist-cover {
+          width: 100%;
+          height: 15em;
+          background-color: bisque;
+          display: flex;
+          padding: 1em;
+          font-family: $secondaryFont;
+          justify-content: flex-start;
+          background-size: cover;
+          align-items: flex-end;
+          background-repeat: no-repeat;
+          background-position: center 30%;
+          border-radius: 10px 10px 0 0;
+
+          .btn-back {
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            color: white;
+            margin-bottom: auto;
+            cursor: pointer;
+
+            .icon {
+              font-size: 1.5rem;
+            }
+          }
+
+          .info-container {
+            padding: 0;
+            text-align: start;
+            color: white;
+            margin-left: -1.5em;
+
+            .artist-name {
+              font-weight: bold;
+              font-size: 3rem;
+              letter-spacing: 0.02em;
+              margin: 0;
+            }
+
+            .artist-info {
+              margin: 0;
+              font-size: 1.2rem;
+              font-family: $secondaryFont;
+              display: flex;
+              align-items: center;
+              color: transparentize(white, 0.2);
+              gap: 0.4em;
+
+              .icon {
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+
+        .artist-body {
+          display: flex;
+          flex-direction: column;
+          font-family: $secondaryFont;
+          background-color: transparentize(gray, 0.8);
+          width: 100%;
+          align-items: flex-start;
+          border-radius: 0 0 10px 10px;
+
+          .album-view,
+          .gallery {
+            width: 100%;
+            border-right: 1px solid transparentize(gray, 0.8);
+            text-align: start;
+            padding: 0 1.3em;
+            display: flex;
+            flex-wrap: wrap;
+            border-image: linear-gradient(
+                transparent 10%,
+                transparentize(white, 0.8) 10% 50%,
+                transparent 90%
+              )
+              0 0 0 1 / 3px;
+            position: relative;
+
+            h2 {
+              width: 100%;
+              color: white;
+              font-size: 1.2rem;
+            }
+
+            h3 {
+              width: 100%;
+              margin: 0.5em 0;
+              color: white;
+            }
+
+            .close-album {
+              position: absolute;
+              border: 0;
+              outline: 0;
+              background: transparent;
+              top: 1em;
+              left: 0.5em;
+              cursor: pointer;
+
+              .icon {
+                font-size: 2rem;
+                color: rgba(255, 255, 255, 0.5);
+                transition: all 0.3s;
+              }
+
+              &:hover > .icon {
+                color: white;
+              }
+            }
+
+            .album-cover-display {
+              width: 70%;
+              margin: 1.3em 0;
+              box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+            }
+
+            .album-info {
+              padding: 0.5em 0;
+              color: transparentize(white, 0.3);
+
+              .album-title {
+                font-size: 1.2rem;
+                letter-spacing: 0.05em;
+                margin: 0;
+                color: white;
+              }
+
+              .album-release-date {
+                display: flex;
+                align-items: center;
+                font-size: 0.8rem;
+                gap: 0.5em;
+              }
+            }
+
+            .album-tracks,
+            ul {
+              list-style: none;
+              padding: 0;
+              display: flex;
+              margin: 0;
+              width: 100%;
+              flex-wrap: wrap;
+
+              .tracks {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin: 0;
+
+                color: white;
+              }
+
+              .top-tracks {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                gap: 0.7em;
+                width: 50%;
+                color: white;
+
+                .album-cover {
+                  width: 2.5em;
+                }
+
+                p {
+                  font-size: 0.9rem;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+
+          .album-tracks {
+            list-style-type: none;
+            display: block;
+            overflow-x: auto;
+            height: auto;
+            max-height: 20em;
+            width: 100%;
+
+            li {
+              font-size: 0.9rem;
+            }
+          }
+
+          .artist-album-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+              width: 100%;
+            }
+
+            .album-wrapper {
+              list-style-type: none;
+              display: inline-block;
+              height: auto;
+              padding-bottom: 0.8em;
+              width: 100%;
+              overflow-x: auto;
+              padding: 0;
+              white-space: nowrap;
+
+              li {
+                display: inline-block;
+                margin: 0;
+                margin-right: 0.4em;
+
+                &:last-child {
+                  margin-right: 0;
+                }
+
+                .album-container {
+                  color: white;
+                  display: flex;
+                  white-space: normal;
+                  word-break: break-all;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0;
+                  cursor: pointer;
+                  width: 9em;
+                  background-color: transparentize(gray, 1);
+
+                  img {
+                    width: 100%;
+                    transition: all 0.3s;
+                  }
+
+                  p {
+                    font-size: 0.7rem;
+                    text-align: center;
+                  }
+
+                  &:hover > img {
+                    box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+                  }
+                }
+              }
+            }
+          }
+
+          .related-artist {
+            width: 100%;
+            text-align: start;
+
+            h2 {
+              width: 100%;
+              color: white;
+              font-size: 1.2rem;
+              padding-left: 1.2em;
+            }
+
+            .related-artist-container {
+              padding: 1em;
+              width: 100%;
+              height: 20em;
+              text-align: start;
+              cursor: pointer;
+              display: flex;
+              overflow-y: auto;
+              flex-wrap: wrap;
+              gap: 0.8em;
+              border-left: 1px solid transparentize(gray, 0.2);
+              border-image: linear-gradient(
+                  transparentize(white, 0.8) 5% 10%,
+                  transparent 70%
+                )
+                0 0 0 1 / 3px;
+              border-bottom: 20px solid;
+            }
+
+            .related-wrapper {
+              width: 47%;
+              padding: auto;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              color: white;
+              padding: 0em 1.5em;
+
+              .no-image,
+              img {
+                width: 8em;
+                height: 8em;
+                border-radius: 999px;
+                transition: 0.3s all;
+              }
+
+              p {
+                font-size: 0.8rem;
+                text-align: center;
+              }
+
+              &:hover > img {
+                box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+  } // main
+}
