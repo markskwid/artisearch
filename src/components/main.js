@@ -35,7 +35,7 @@ const MainContent = () => {
   ];
 
   const clientID = "c48f23b5284a4d628c5394119b721e6b";
-  const uri = "http://localhost:3000";
+  const uri = `https://markskwid.github.io/artisearch/`;
   const endpoint = "https://accounts.spotify.com/authorize";
   const response = "token";
 
