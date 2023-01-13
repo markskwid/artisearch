@@ -1,25 +1,18 @@
 import React from "react";
-import { useState, useEffect, useContext, useRef } from "react";
-import Header from "./header";
+import { useState, useEffect } from "react";
 import "../sass/styles.scss";
 import { TfiSearch } from "react-icons/tfi";
 import { MdArrowBack } from "react-icons/md";
-import { ImSpotify, ImHeart } from "react-icons/im";
+import { ImSpotify } from "react-icons/im";
 import {
   BsPersonCircle,
   BsHeartFill,
-  BsPause,
   BsGlobe,
-  BsBack,
-  BsArrowReturnLeft,
-  BsArrowBarLeft,
   BsCalendar2DateFill,
-  BsVinylFill,
   BsArrowLeftCircleFill,
 } from "react-icons/bs";
-import { FaCopyright, FaCompactDisc } from "react-icons/fa";
+import { FaCompactDisc } from "react-icons/fa";
 import { SlSocialSpotify } from "react-icons/sl";
-import axios from "axios";
 import SpotifyWebApi from "spotify-web-api-js";
 
 const MainContent = () => {
@@ -114,7 +107,7 @@ const MainContent = () => {
   };
 
   const ArtistTopTracks = () => {
-    //console.log(albums);
+    // console.log(albums);
     return (
       <div className="gallery">
         <h2>Top Tracks</h2>
@@ -140,7 +133,7 @@ const MainContent = () => {
                   (album_group == "album" && album_type == "album") ||
                   (album_group == "single" &&
                     album_type == "single" &&
-                    total_tracks > 2)
+                    total_tracks > 3)
               )
               .map((e) => (
                 <li key={e.id}>
@@ -191,11 +184,6 @@ const MainContent = () => {
           <p className="album-release-date">
             <FaCompactDisc />
             {selectedAlbum.label}
-          </p>
-
-          <p className="album-release-date">
-            <FaCopyright />
-            {selectedAlbum.copyrights[0].text}
           </p>
         </div>
         <h3>Album Tracks</h3>

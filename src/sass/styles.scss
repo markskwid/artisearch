@@ -339,6 +339,7 @@ p {
           .album-view,
           .gallery {
             width: 50%;
+            max-width: 50em;
             border-right: 1px solid transparentize(gray, 0.8);
             text-align: start;
             padding: 0 1.3em;
@@ -385,13 +386,12 @@ p {
             }
 
             .album-cover-display {
-              width: 35%;
+              width: 40%;
               margin: 1.3em 0;
               box-shadow: 0 5px 10px 1px rgba(1, 1, 1, 0.3);
             }
 
             .album-info {
-              padding: 1em;
               color: transparentize(white, 0.3);
 
               .album-title {
@@ -409,6 +409,7 @@ p {
               }
             }
 
+
             .album-tracks,
             ul {
               list-style: none;
@@ -423,7 +424,7 @@ p {
                 display: flex;
                 align-items: center;
                 margin: 0;
-
+                font-size: .90rem;
                 color: white;
               }
 
@@ -449,12 +450,16 @@ p {
             }
           }
 
+          .album-view{
+            flex-direction: column;
+          }
+
           .album-tracks {
             list-style-type: none;
             display: block;
             overflow-x: auto;
             height: auto;
-            max-height: 22em;
+            max-height: 14em;
           }
 
           .artist-album-wrapper {
@@ -580,26 +585,6 @@ p {
     }
   }
 }
-
-.headline {
-  animation: fade 2s linear;
-}
-
-@mixin animation-mixin($name, $color1, $color2) {
-  @keyframes #{$name} {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-
-@include animation-mixin(fade, skyblue, pink);
 
 // media query for phone
 @media screen and (max-width: 767px) {
@@ -1147,4 +1132,16 @@ p {
       }
     }
   } // main
+}
+
+@mixin for-phone-only {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-only {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
 }
